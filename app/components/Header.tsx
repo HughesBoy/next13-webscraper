@@ -7,6 +7,7 @@ const Header = () => {
     <div className='flex flex-col'>
       <Link href={'/'}>home</Link>
       <Link href={'/searchperson'}>search person</Link>
+      <Link href={'/searchUFC'}>search ufc</Link>
     </div>
   )
 }
