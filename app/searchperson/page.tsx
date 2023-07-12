@@ -23,16 +23,16 @@ const SearchPerson = () => {
 
     const res = await fetch('/searchfighter', {
       method: 'POST',
-      body: JSON.stringify({ inputText }),
+      body: JSON.stringify({ inputText }), //this inputText is what we need to bring into out route.ts and destructure
       headers: {
         "Content-Type": "application/json"
       },
     });
 
-    const { fighters } = await res.json();
+    const { fighterList } = await res.json();
 
-    console.log(fighters);
-    setResults(fighters);
+    console.log(fighterList);
+    setResults(fighterList);
     console.log(results);
     setInputText("");
     setLoading(false)
@@ -61,11 +61,11 @@ const SearchPerson = () => {
 					<div key={i}>
 						<h1>{fighter.name}</h1>
             
-						<div>
+						{/* <div>
 							<p>weight class : {fighter.weight}</p>
 							<p>record : {fighter.record}</p>
 							<p>country : {fighter.country}</p>
-						</div>
+						</div> */}
 					</div>
 				))}
 			</div>
